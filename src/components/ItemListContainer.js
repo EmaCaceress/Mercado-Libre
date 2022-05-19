@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-const ItemCount = ({ stock, initial, onAdd }) => {
+const ItemCount = ({ stock, initial,  addCarrito }) => {
 
   const [contador, setContador] = useState(initial);
 
@@ -10,7 +10,7 @@ const ItemCount = ({ stock, initial, onAdd }) => {
 
     if (contador < stock) {
 
-      setContador(contador + 1);
+      setContador(contador+1);
 
     }
 
@@ -27,7 +27,7 @@ const ItemCount = ({ stock, initial, onAdd }) => {
   };
 
   const agregar = () => {//3
-
+    addCarrito(contador);
     alert(`se agregaron ${contador} productos al carrito`);
 
   };

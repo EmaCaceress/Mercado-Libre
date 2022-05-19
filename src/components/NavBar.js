@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import {Navbar,Nav,Container} from 'react-bootstrap';
 import Icons from './CartWidget';
 
-export class NavBarComp extends Component {
-    render(){
+const NavBarComp = ({carrito}) =>{
+    console.log(carrito);
         return(
             <div>
                 <Navbar bg="dark" variant="dark">
@@ -15,11 +15,14 @@ export class NavBarComp extends Component {
                             <Nav.Link href="/entregas.js">Entregas</Nav.Link>
                             <Nav.Link href="/contactanos.js">Contactanos</Nav.Link>
                         </Nav>
-                        <Icons/>
+                        <Icons carrito={carrito}/>
                     </Container>
                 </Navbar>
             </div>
         )
-    }
 }
+
+
+
+export default NavBarComp;
 
