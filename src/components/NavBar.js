@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import {Navbar,Nav,Container} from 'react-bootstrap';
+import Icons from './CartWidget';
 
-export default class NavBarComp extends Component {
+export class NavBarComp extends Component {
     render(){
         return(
             <div>
@@ -14,6 +15,7 @@ export default class NavBarComp extends Component {
                             <Nav.Link href="/entregas.js">Entregas</Nav.Link>
                             <Nav.Link href="/contactanos.js">Contactanos</Nav.Link>
                         </Nav>
+                        <Icons/>
                     </Container>
                 </Navbar>
             </div>
