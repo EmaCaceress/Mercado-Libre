@@ -6,7 +6,7 @@ import { Badge, Button } from "react-bootstrap";
 const Icons =({carrito})=>{ 
 
         return(
-            <Button variant="dark"><FaShoppingCart style={{color:'white',fontSize:'2vw'}}/> <Badge bg="secondary">{carrito}</Badge></Button>
+            <Button variant="none"><FaShoppingCart style={{color:'black',fontSize:'2vw'}}/> <Badge bg="secondary">{carrito}</Badge></Button>
             // <FaShoppingCart style={{color:'white',fontSize:'2vw'}}/>
         );
 }

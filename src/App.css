@@ -1,3 +1,26 @@
+
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Glory:ital@1&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Encode+Sans&display=swap");
+
+html {
+  overflow-x: hidden; }
+
+* {
+  padding: 0;
+  margin: 0; }
+
+/* Scroll */
+html::-webkit-scrollbar {
+  width: 5px;
+  background: rgba(2, 2, 2, 0.1); }
+
+html::-webkit-scrollbar-thumb {
+  background: rgba(2, 2, 2, 0.5); }
+
+
 .App {
   text-align: center;
 }
@@ -36,3 +59,84 @@
     transform: rotate(360deg);
   }
 } 
+
+.nav-logo{
+  background-image: url(https://http2.mlstatic.com/frontend-assets/ui-navigation/5.18.9/mercadolibre/logo__small.png);
+  background-repeat: no-repeat;
+  height: 28px;
+  overflow: hidden;
+  text-indent: -999px;
+  width: 39px;
+  top: 11px;
+  position: absolute;
+  left: 10px;
+}
+
+.nav-header{
+  background-color: #fff159;
+  border: 0;
+  position: relative;
+}
+
+.containerDetail{
+  display: grid;
+  grid-template-rows: 80vh 12vh;
+  grid-template-columns: 50vw 50vw;
+}
+
+.titleBody{
+  text-align: center;
+  font-size: 10vh;
+  color: black;
+  font-family: "Bebas Neue", cursive;
+}
+
+.containerImg{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  grid-column: 1/2;
+  grid-row: 1/2;
+}
+
+.imgDetail{
+  height: 80%;
+  max-width: 100%;
+}
+
+.containerFooter{
+  grid-row: 2/3;
+  grid-column: 1/3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.titleFooter{
+  font-family: 'Bebas Neue', cursive;
+  font-size: 3vh;
+  text-align: center;
+}
+
+.containerBody{
+  border: 1px solid #282c34  ;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  padding: 1%;
+}
+
+.textBody{
+  color: #666;
+  font-size: 20px;
+}
+
+.costBody{
+  font-size: 36px;
+  font-weight: 300;
+}
+
+.botones{
+  padding:5%;
+}

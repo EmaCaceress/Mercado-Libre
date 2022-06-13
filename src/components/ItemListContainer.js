@@ -1,20 +1,27 @@
 import customFetch from "../utils/customFetch";
-import ItemList from "./itemList";
 import { useEffect , useState } from "react";
-const { stock } = require('../utils/stock');
+import ItemDetail from "./itemDetail";
+import ItemList from "./itemList";
 
-const ItemListContainer = () => {
-  const [datos, setDatos] = useState([]);
+
+const ItemListContainer = ({items, setItems, setId}) => {
+
 
   useEffect(()=>{
-    customFetch(2000, stock)
-    .then(res=> setDatos(res))
-    .catch(rej=> console.log(rej)) 
-  }, []);
-  
+    // if(id!==undefined){
+    //   customFetch(1000, items.filter(e=> e.id==parseInt(id)))
+    //   .then(res=> setPage(res))
+    //   .catch(rej=> console.log(rej)) 
+    // }else{
+      customFetch(2000, items)
+      .then(res=> setItems(res))
+      .catch(rej=> console.log(rej)) 
+
+  }, []); 
+
   return(
     <>
-      <ItemList items={datos}></ItemList>
+      <ItemList items={items} setId={setId}/>
     </>
   ) 
 };
