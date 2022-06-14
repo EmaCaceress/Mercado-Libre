@@ -1,27 +1,30 @@
-import customFetch from "../utils/customFetch";
+import customFetch from "../utils/CustomFetch";
 import { useEffect , useState } from "react";
-import ItemDetail from "./itemDetail";
-import ItemList from "./itemList";
+import ItemDetail from "./ItemDetail";
+import ItemList from "./ItemList";
+import { stock } from "../utils/Stock";
+import { useParams } from 'react-router-dom';
 
 
-const ItemListContainer = ({items, setItems, setId}) => {
-
+const ItemListContainer = () => {
+  const [items, setItems]=useState([]);
+  const {id}=useParams();
 
   useEffect(()=>{
-    // if(id!==undefined){
-    //   customFetch(1000, items.filter(e=> e.id==parseInt(id)))
-    //   .then(res=> setPage(res))
-    //   .catch(rej=> console.log(rej)) 
-    // }else{
-      customFetch(2000, items)
-      .then(res=> setItems(res))
+      setItems([]);
+      customFetch(2000, stock)
+      .then(res=>{
+        if(id!==undefined)
+          setItems(res.filter(item=>item.categoryId==id));
+        else
+          setItems(res);
+      })
       .catch(rej=> console.log(rej)) 
-
-  }, []); 
+  }, [id]); 
 
   return(
     <>
-      <ItemList items={items} setId={setId}/>
+      <ItemList items={items}/>
     </>
   ) 
 };

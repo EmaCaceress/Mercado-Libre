@@ -1,6 +1,7 @@
-import ItemCount from './itemCount';
+import ItemCount from './ItemCount';
 
 const ItemDetail = ({id, title, description, cost, stock, picture}) =>{
+    
     const onAdd = (qsy) =>{
         alert("Se agregaron "+ qsy +" a tu carrito");
     }

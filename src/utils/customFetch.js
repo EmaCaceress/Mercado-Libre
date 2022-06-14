@@ -1,9 +1,11 @@
-import { stock } from "./stock";
+const is_ok=true;
 
 const customFetch = (time, task) =>{
     return new Promise((res, rej)=>{
         setTimeout(()=>{
-            if(task.length>0){res(task)}else if(stock){ res(stock)}else{rej("Error")}
+            is_ok
+                ? res(task)
+                : rej("Error")
         },time)
     })    
 }

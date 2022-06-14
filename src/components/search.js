@@ -1,8 +1,5 @@
 import { useState } from 'react';
-import App from '../App';
-import ItemDetailContainer from './itemDetailContainer';
-
-const { stock } = require('../utils/stock');
+const { stock } = require('../utils/Stock');
 
 const Search = ({items, setItems}) =>{
 

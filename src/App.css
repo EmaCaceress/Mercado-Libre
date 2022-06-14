@@ -140,3 +140,8 @@ html::-webkit-scrollbar-thumb {
 .botones{
   padding:5%;
 }
+
+.category{
+  text-decoration: none;
+  color: black;
+}

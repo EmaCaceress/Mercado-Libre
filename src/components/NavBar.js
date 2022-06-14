@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import {Navbar,Nav,Container} from 'react-bootstrap';
 import Icons from './CartWidget';
-import Search from './search';
+import Search from './Search';
+import {Link} from 'react-router-dom';
 
 const NavBarComp = ({carrito, items, setItems}) =>{
 
@@ -10,14 +11,13 @@ const NavBarComp = ({carrito, items, setItems}) =>{
                 <Navbar className='nav-header'>
                     <Container>
                         <Navbar.Brand href="#">
-                        <a class="nav-logo" href="//www.mercadolibre.com.ar" tabindex="2">Mercado Libre Argentina - Donde comprar y vender de todo</a>
+                        <Link to="/" class="nav-logo" tabindex="2">Mercado Libre Argentina - Donde comprar y vender de todo</Link>
                         </Navbar.Brand>
                         <Search items={items} setItems={setItems}/>
                         <Nav className="me-auto"> 
-                            <Nav.Link href="/inicio.js">Inicio</Nav.Link>
-                            <Nav.Link href="/productos.js">Productos</Nav.Link>
-                            <Nav.Link href="/entregas.js">Entregas</Nav.Link>
-                            <Nav.Link href="/contactanos.js">Contactanos</Nav.Link>
+                            <Nav.Link ><Link className="category"to="/category/1">Indumentaria</Link></Nav.Link>
+                            <Nav.Link ><Link className="category"to="/category/2">Electrodomesticos</Link></Nav.Link>
+                            <Nav.Link ><Link className="category"to="/category/3">Vehiculos</Link></Nav.Link>
                         </Nav>
                         <Icons carrito={carrito}/>
                     </Container>
