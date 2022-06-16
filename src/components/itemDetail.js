@@ -1,9 +1,14 @@
+import CheckOut from './CheckOut';
 import ItemCount from './ItemCount';
+import { useState } from "react";
 
 const ItemDetail = ({id, title, description, cost, stock, picture}) =>{
     
+    const [count, setCount]= useState(0);
+
     const onAdd = (qsy) =>{
         alert("Se agregaron "+ qsy +" a tu carrito");
+        setCount(qsy);
     }
 
     return(
@@ -15,7 +20,12 @@ const ItemDetail = ({id, title, description, cost, stock, picture}) =>{
                 <h5 className="card-title titleBody">{title}</h5>
                 <p className="card-text textBody">{description}</p>
                 <p className="card-text costBody">${cost}</p>
-                <ItemCount stock={stock} initial={0} addCarrito={onAdd}></ItemCount>
+                {
+                    count === 0
+                    ? <ItemCount stock={stock} initial={0} addCarrito={onAdd}/>
+                    : <CheckOut />
+                }
+
             </div>
             <div className="card-footer containerFooter">
                 <h1 className='titleFooter'>Hay {stock} productos</h1>

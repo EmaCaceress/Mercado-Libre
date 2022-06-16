@@ -1,12 +1,12 @@
 import customFetch from "../utils/CustomFetch";
 import { useEffect , useState } from "react";
 import ItemDetail from "./ItemDetail";
-import { stock } from "../utils/Stock";
+import { stock } from "../utils/stock";
 import {useParams} from 'react-router-dom';
 
 const ItemDetailContainer = () => {
   const [detail, setDetail]=useState({});
-  const {id}=useParams();
+  const {id}=useParams(); 
 
   useEffect(()=>{
       customFetch(2000, stock)     

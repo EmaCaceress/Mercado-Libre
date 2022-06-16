@@ -1,10 +1,8 @@
 import customFetch from "../utils/CustomFetch";
 import { useEffect , useState } from "react";
-import ItemDetail from "./ItemDetail";
 import ItemList from "./ItemList";
 import { stock } from "../utils/Stock";
 import { useParams } from 'react-router-dom';
-
 
 const ItemListContainer = () => {
   const [items, setItems]=useState([]);
